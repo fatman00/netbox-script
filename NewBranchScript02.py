@@ -153,7 +153,7 @@ class NewBranchScript(Script):
             )
             new_vlan.save()
             self.log_success(f"Created new VLAN: {new_vlan}")
-            new_prefix = Prefix(prefix=f"10.{data['site_id']}.{vlan-300}.0/24", site=site, status=PrefixStatusChoices.STATUS_ACTIVE, vrf=data['site_vrf'], vlan=new_vlan)
+            new_prefix = Prefix(prefix=f"10.{data['site_id']}.{vlan}.0/24", site=site, status=PrefixStatusChoices.STATUS_ACTIVE, vrf=data['site_vrf'], vlan=new_vlan)
             new_prefix.save()
             self.log_success(f"Created new prefix: {new_prefix}")
 
